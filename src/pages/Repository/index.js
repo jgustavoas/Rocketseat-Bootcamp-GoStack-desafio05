@@ -30,7 +30,7 @@ export default class Repositorio extends Component {
 
     const repoName = decodeURIComponent(match.params.repositorio);
     // ...Como se pretende executar as duas ao mesmo tempo, faz-se o seguinte:
-    // Detalhe: consegue-se desestruturar dentro de uma array o resultados das chamadas
+    // Detalhe: consegue-se desestruturar dentro de uma array os resultados das chamadas
     const [repositorio, issues] = await Promise.all([
       api.get(`/repos/${repoName}`),
       api.get(`/repos/${repoName}/issues`, {
