@@ -12,4 +12,4 @@ Funcionalidades foram incluídas além das quatro exigidas oringinalmente:
 8. <i><strong>Extra:</strong> Mensagem de erro exibida no placeholder do input com o que foi digitado ao validar</i>
 
 Link para o desafio original:
-https://github.com/Rocketseat/bootcamp-gostack-desafio-05/blob/master/README.md
+https://github.com/Rocketseat/bootcamp-gostack-desafio-05/
