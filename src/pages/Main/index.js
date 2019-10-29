@@ -24,12 +24,9 @@ export default class Main extends Component {
     const repositorios = localStorage.getItem('repositorios');
 
     if (repositorios) {
-      const ordernarRepositorios = JSON.parse(repositorios).sort(function(
-        a,
-        b
-      ) {
-        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+      const ordernarRepositorios = JSON.parse(repositorios).sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
         if (nameA < nameB) {
           return -1;
         }
@@ -37,7 +34,6 @@ export default class Main extends Component {
           return 1;
         }
 
-        // names must be equal
         return 0;
       });
 
@@ -51,9 +47,9 @@ export default class Main extends Component {
   componentDidUpdate(_, stateAnterior) {
     const { repositorios } = this.state;
 
-    const ordernarRepositorios = repositorios.sort(function(a, b) {
-      const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    const ordernarRepositorios = repositorios.sort((a, b) => {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
       if (nameA < nameB) {
         return -1;
       }
@@ -61,7 +57,6 @@ export default class Main extends Component {
         return 1;
       }
 
-      // names must be equal
       return 0;
     });
 
@@ -134,8 +129,21 @@ export default class Main extends Component {
           name: response.data.full_name,
         };
 
+        const ordernarRepositorios = [...repositorios, data].sort((a, b) => {
+          const nameA = a.name.toUpperCase();
+          const nameB = b.name.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          return 0;
+        });
+
         this.setState({
-          repositorios: [...repositorios, data],
+          repositorios: ordernarRepositorios,
           newRepo: '',
           carregando: false,
           encontrado: true,
