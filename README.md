@@ -7,8 +7,8 @@ Funcionalidades foram incluídas além das quatro exigidas oringinalmente:
 3. Filtro de estado
 4. Paginação
 5. <i><strong>Extra:</strong> Ordenação instantânea da lista a cada inserção de novo repositório</i>
-6. <i><strong>Extra:</strong> Validação para o formato "user/respository" no campo input
-7. <i><strong>Extra:</strong> Validação para input em branco
+6. <i><strong>Extra:</strong> Validação para o formato "user/respository" no campo input</i>
+7. <i><strong>Extra:</strong> Validação para input em branco</i>
 
 Link para o desafio original:
 https://github.com/Rocketseat/bootcamp-gostack-desafio-05/blob/master/README.md
